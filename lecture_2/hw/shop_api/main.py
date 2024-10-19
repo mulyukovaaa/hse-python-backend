@@ -12,7 +12,7 @@ from lecture_2.hw.shop_api.models import (
     UpdateItem)
 
 app = FastAPI(title='Shop API')
-
+#
 items: Dict[UUID, Item] = {}
 carts: Dict[UUID, Cart] = {}
 
