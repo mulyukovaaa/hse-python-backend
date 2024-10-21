@@ -40,6 +40,7 @@ async def get_user(
     if id is None and username is None:
         raise ValueError("neither id nor username are provided")
 
+    entity = None
     if id is not None and (author.uid == id or author.info.role == UserRole.ADMIN):
         entity = user_service.get_by_id(id)
     elif author.info.username == username or author.info.role == UserRole.ADMIN:
