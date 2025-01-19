@@ -2,6 +2,7 @@ from http import HTTPStatus
 from typing import Optional, Dict
 from uuid import UUID, uuid4
 
+
 from prometheus_fastapi_instrumentator import Instrumentator
 from fastapi import FastAPI, HTTPException, Query, Response
 from lecture_2.hw.shop_api.models import (
@@ -13,9 +14,7 @@ from lecture_2.hw.shop_api.models import (
     UpdateItem)
 
 app = FastAPI(title='Shop API')
-
 Instrumentator().instrument(app).expose(app)
-
 items: Dict[UUID, Item] = {}
 carts: Dict[UUID, Cart] = {}
 
